@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - FIN GATE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            /* Added paper-like texture background */
+            background-color: #f7f4ef;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+        }
+        .bg-paper {
+            background-color: #ffffff;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+        }
+        .cta-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            letter-spacing: -0.025em;
+        }
+        .premium-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+        .premium-shadow-hover:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* Floating Header Style */
+        .floating-header-shadow {
+            box-shadow: 0 0 35px 0 rgba(234, 88, 12, 0.25);
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/60 backdrop-blur-2xl rounded-2xl border border-white/10 floating-header-shadow">
+        <nav class="px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-gray-900 tracking-tight">FIN <span class="text-orange-600">GATE</span></a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#about" class="text-gray-600 hover:text-orange-600 transition-colors">About Us</a>
+                <a href="services.html" class="text-gray-600 hover:text-orange-600 transition-colors">Services</a>
+                <a href="index.html#process" class="text-gray-600 hover:text-orange-600 transition-colors">Process</a>
+                <a href="index.html#testimonials" class="text-gray-600 hover:text-orange-600 transition-colors">Testimonials</a>
+                <a href="index.html#contact" class="bg-orange-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-700 cta-button">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 rounded-b-2xl">
+            <a href="index.html#about" class="block py-2 text-gray-600 hover:text-orange-600">About Us</a>
+            <a href="services.html" class="block py-2 text-gray-600 hover:text-orange-600">Services</a>
+            <a href="index.html#process" class="block py-2 text-gray-600 hover:text-orange-600">Process</a>
+            <a href="index.html#testimonials" class="block py-2 text-gray-600 hover:text-orange-600">Testimonials</a>
+            <a href="index.html#contact" class="block mt-2 bg-orange-600 text-white px-4 py-2 rounded-lg text-center hover:bg-orange-700">Contact Us</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Services Page Content -->
+        <section id="services-detailed" class="py-24 bg-paper">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-center text-gray-900 mb-16 section-title">Our Services</h1>
+                <!-- Service 1: Personal Loans -->
+                <div id="personal-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Personal Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">At FIN GATE, our Goal is to assist our Customers in getting the right Personal Loan at the right time. We provide an all-inclusive solution to your various personal finance requirements. We hand hold every customer throughout the Loan application journey cycle until their requirement is fulfilled. We can help you get a Personal Loan to meet various life needs like sudden unexpected expenses, a medical emergency, school or college admission, home renovation or decoration, long awaited vacation or travel, buying accessories or gadgets, or any other personal expenses. Whatever the life occasion or demand, our range of Personal Loans can help you meet your funding needs to fulfill dreams.</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/7821490/pexels-photo-7821490.jpeg?cs=srgb&dl=pexels-rdne-7821490.jpg&fm=jpg" alt="Personal Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+                <!-- Service 2: Business Loans -->
+                <div id="business-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <img src="https://images.pexels.com/photos/534229/pexels-photo-534229.jpeg?cs=srgb&dl=pexels-pixabay-534229.jpg&fm=jpg" alt="Business Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Business Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">We are providing Business Loan Consultancy Services to all the clients, present across the marketplace. With the aid of our organized work structure and experienced personnel, we do not take a lot of time for the processing and documentation. We offer solutions to Clients where services are presented with Flexible Payment Scheme with negligible interest rates. Loan dispensation is done quickly without exaggerating the procedure. We offer assistance for availing business loans where a specific amount has a fixed repayment schedule and a floating interest rate. Term Loans are a superb way of sharply increasing capital in order to increase a business, supply capabilities.</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                </div>
+                <!-- Service 3: Car Loans -->
+                <div id="car-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Car Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">At FIN GATE, we help you to get a Loan to either buy a new Car or a used Car. We also help you to get a Loan to upgrade or improve your Car. We are here to guide you and listen to your needs to help you to take the right decision. If you wish to finance your favourite vehicle, we're glad to be with you to ensure that you are happy with your Car finance decision. We understand that you need more than just finance for your dream Car. Thus we offer you a complete package of timely service offers, competitive rates and competent guidance along with 100% finance on select models of different Cars. We have exclusive Tie-ups with leading financiers to ensure the best deals for you. We offer Flexible schemes, quick processing and Hassle-free application process for your dream Car.</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?cs=srgb&dl=pexels-pixabay-164634.jpg&fm=jpg" alt="Car Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+                <!-- Service 4: SME Loans -->
+                <div id="sme-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <img src="https://images.pexels.com/photos/33305255/pexels-photo-33305255.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-33305255.jpg&fm=jpg" alt="SME Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">SME Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">We are a distinguished organization in the market, exceedingly indulged in offering SME Loans to our customers. These types of Loans are provided to Small and Medium Enterprises in order to cater to their business expansion needs. Considering our customer's requests, we perform in-depth evaluation and make sure that always authentic and fruitful solutions are offered to them. Our expert personnel put in their advisory efforts in reference to customer's specifications. We work with an approach to offer exemplary services to Clients by offering them solutions, where they need to pay low interest. Following are some other services offered by us :- 1) Term Loan 2) Over Draft 3) Cash Credit 4) Bank Guarantee and 5) Letter of Credit</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                </div>
+                <!-- Service 5: Project Loans -->
+                <div id="project-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Project Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">FIN GATE also undertakes Loan Syndication for project loans. We are offering our financial assistance for projects that may belong to Industrial, Institutional, Commercial or Residential sector. As these projects often require Banks to undertake their Loan Syndication, we help our clients to further proceed in the way. We provide project loans from Banks and NBFC's for all category. With the effort of our experienced advisors and personnel, we make sure that the mutual agreement between the financial institutions and borrower could be established in an easier way, causing fruitful results. Credit facility is also made available adhering common loan documentation.</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/33311804/pexels-photo-33311804.jpeg?cs=srgb&dl=pexels-c-u-d-ng-vi-t-nam-478497515-33311804.jpg&fm=jpg" alt="Project Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+                <!-- Service 6: Home Loans -->
+                <div id="home-loans" class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                    <div>
+                        <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg" alt="Home Loan Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Home Loans</h2>
+                        <p class="text-gray-600 mb-4 text-lg">To owe our own home is every individual's dream and thus, to provide an easy platform to make these dreams come true, we are rendering Home Loan Finance Consultancy Services. Our personnel first evaluate Client's need and other relevant facets, leading to further assistance in the procedure. With experience of serving our pleased Clientele, we offer the most suitable Home Loan Solutions to suit their individual needs. We provide home loan solutions at competitive rates and for maximum amortization period. We provide expert guidance throughout the procedure, thereby buying a house becomes a convenient task for our satisfied customers. We offer home loans for :- 1) Purchase of Home or Flat 2) Purchase of Site 3) Construction</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                </div>
+                <!-- Service 7: Loan Against Property -->
+                <div id="lap-loans" class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6 section-title">Loan Against Property</h2>
+                        <p class="text-gray-600 mb-4 text-lg">We are offering finance consultancy services to Clients for secured Loan needs. The specified assistance is offered against properties owned by Clients. Clients owing Commercial or Residential Property can make use of the value of the same by opting for loan against property. Procedure involved in the same is hassle-free. Processing fees and rate of interest charged is fairly attractive, so that our Customers could be able to make prompt choices and avail maximum Benefits. Further, processing is viable as considering borrower's Financial Performance. Clients can ask for loan against property either for business or personal purposes such as Trade expansion, Working Capital, Repayment of expensive Loans and various other needs. Following properties are considered adequate for offering Loan Against Property :- 1) House/Flat/Residential Site 2) Commercial Site/Building 3) Industrial Site/Building 4) Lease Rental Discounting</p>
+                        <a href="index.html#contact" class="inline-block mt-4 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 cta-button">Apply Now</a>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/33305255/pexels-photo-33305255.jpeg?cs=srgb&dl=pexels-jakubzerdzicki-33305255.jpg&fm=jpg" alt="Loan Against Property Logo" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold">FIN <span class="text-orange-500">GATE</span></h3>
+                    <p class="text-gray-400">Let us solve your all Money issues & Finance needs.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                &copy; 2025 FIN GATE. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
