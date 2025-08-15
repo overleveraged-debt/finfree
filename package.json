@@ -1,0 +1,32 @@
+{
+  "name": "fin-gate",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/overleveraged-debt/mockup5_fin-flow.git"
+  },
+  "keywords": [
+    "finance",
+    "loans",
+    "fintech",
+    "financial-services"
+  ],
+  "author": "FIN GATE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/overleveraged-debt/mockup5_fin-flow/issues"
+  },
+  "homepage": "https://github.com/overleveraged-debt/mockup5_fin-flow#readme",
+  "description": "FIN GATE - Professional Financial Services Website",
+  "devDependencies": {
+    "vite": "^7.1.2",
+    "vite-plugin-html": "^3.2.2"
+  }
+}
