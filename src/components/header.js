@@ -31,19 +31,19 @@ function createHeader(pageType = 'home', activePage = '') {
     return `
     <header id="main-header" class="${headerClass}">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/index.html" class="flex-shrink-0 logo-shine">
-                <img src="/assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="${logoHeight} transition-all duration-300" id="logo-img">
+            <a href="./index.html" class="flex-shrink-0 logo-shine">
+                <img src="./public/assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="${logoHeight} transition-all duration-300" id="logo-img">
             </a>
             <div class="hidden md:flex flex-grow justify-center space-x-8 items-center">
-                <a href="/index.html#about" class="${getNavLinkClass('about')}">About Us</a>
-                <a href="/services.html" class="${getNavLinkClass('services')}">Services</a>
-                <a href="/index.html#process" class="${getNavLinkClass('process')}">Process</a>
-                <a href="/index.html#testimonials" class="${getNavLinkClass('testimonials')}">Testimonials</a>
+                <a href="./index.html#about" class="${getNavLinkClass('about')}">About Us</a>
+                <a href="./services.html" class="${getNavLinkClass('services')}">Services</a>
+                <a href="./index.html#process" class="${getNavLinkClass('process')}">Process</a>
+                <a href="./index.html#testimonials" class="${getNavLinkClass('testimonials')}">Testimonials</a>
                 <button onclick="openEMICalculator()" class="${getNavLinkClass('emi')} cursor-pointer">EMI Calculator</button>
-                <a href="/certificates.html" class="${getNavLinkClass('certificates')}">Certificates</a>
+                <a href="./certificates.html" class="${getNavLinkClass('certificates')}">Certificates</a>
             </div>
             <div class="hidden md:flex items-center flex-shrink-0">
-                <a href="/index.html#contact" class="bg-orange-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-700 cta-button">Contact Us</a>
+                <a href="./index.html#contact" class="bg-orange-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-700 cta-button">Contact Us</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="${buttonColor} focus:outline-none">
