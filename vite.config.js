@@ -6,7 +6,7 @@ export default defineConfig({
   publicDir: 'public',
   base: '/', // Important for custom domain
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),

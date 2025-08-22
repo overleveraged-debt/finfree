@@ -5,7 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build outputs (uncomment if using manual deployment)
-# docs/
+# dist/
 build/
 
 # Environment variables
