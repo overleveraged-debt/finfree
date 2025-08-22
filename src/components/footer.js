@@ -47,6 +47,13 @@ function createFooter() {
                             <option>Home Loan</option>
                             <option>Business Loan</option>
                             <option>Loan Against Property</option>
+                            <option>SME Loans</option>
+                            <option>Project Loans</option>
+                            <option>Car Loans</option>
+                            <option>Unsecured Business Loans</option>
+                            <option>Bill Discounting</option>
+                            <option>Medical Equipment Loans</option>
+                            <option>Machinery Loans</option>
                             <option>Other</option>
                         </select>
                         <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 mb-6"></textarea>
@@ -62,8 +69,8 @@ function createFooter() {
         <div class="container mx-auto px-6 py-10">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="mb-6 md:mb-0">
-                    <img src="./public/assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="h-20 mb-4">
-                    <p class="text-gray-400">Your trusted partner in financial services. Let us solve your money issues and finance needs.</p>
+                    <img src="./assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="h-20 mb-4">
+                    <p class="text-gray-400">Your trusted partner in financial services. Let us solve your money issues and financial needs.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
@@ -97,7 +104,7 @@ function createFooter() {
             <div class="py-1"><svg class="fill-current h-6 w-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-11a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0V7zm1 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg></div>
             <div>
                 <p class="font-bold">FRAUD ALERT</p>
-                <p class="text-sm">Please note FINGATE does not have any Branch or Office outside Bangalore. Only Mr. Andrews John interact with Customers via Mobile Nos. and via Email. Calls/Emails received from any other Mobile No or Email Address as FINGATE is Fraudulent and not us.</p>
+                <p class="text-sm">Please note FINGATE does not have any Branch or Office outside Bangalore.</p>
                 <ul class="text-sm list-disc list-inside mt-2">
                     <li><strong>Mobile:</strong> 94488 52674</li>
                     <li><strong>Mobile:</strong> 97436 52468</li>
@@ -386,20 +393,30 @@ function initFooter() {
 
 // Footer functionality
 function initFooterFunctionality() {
-    // Fraud alert functionality (original popup style)
+    // Fraud alert functionality - only show in contact section
     const fraudAlert = document.getElementById('fraud-alert');
     const closeFraudAlert = document.getElementById('close-fraud-alert');
+    const contactSection = document.getElementById('contact');
 
-    if (fraudAlert && closeFraudAlert) {
-        // Show fraud alert after 2 seconds
-        setTimeout(() => {
-            fraudAlert.classList.remove('hidden');
-        }, 2000);
+    if (fraudAlert && closeFraudAlert && contactSection) {
+        // Observer to detect when contact section is in view
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Show fraud alert when contact section is visible
+                    setTimeout(() => {
+                        fraudAlert.classList.remove('hidden');
+                    }, 1000);
+                } else {
+                    // Hide fraud alert when contact section is not visible
+                    fraudAlert.classList.add('hidden');
+                }
+            });
+        }, {
+            threshold: 0.3 // Trigger when 30% of contact section is visible
+        });
 
-        // Auto-hide after 15 seconds
-        setTimeout(() => {
-            fraudAlert.classList.add('hidden');
-        }, 17000);
+        contactObserver.observe(contactSection);
 
         closeFraudAlert.addEventListener('click', () => {
             fraudAlert.classList.add('hidden');

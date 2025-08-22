@@ -1,16 +1,14 @@
 // Header Component
-function createHeader(pageType = 'home', activePage = '') {
-    const isHomePage = pageType === 'home';
-    const headerClass = isHomePage 
-        ? 'absolute top-0 left-0 w-full z-50 transition-all duration-300' 
-        : 'fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-md';
-    
-    const logoHeight = isHomePage ? 'h-24' : 'h-20';
-    const textColor = isHomePage ? 'text-white' : 'text-gray-800';
-    const buttonColor = isHomePage ? 'text-white' : 'text-gray-800';
-    const mobileMenuBg = isHomePage ? 'bg-gray-900/95 backdrop-blur-sm' : 'bg-white/95 backdrop-blur-sm border-t border-gray-200';
-    const mobileLinkColor = isHomePage ? 'text-white' : 'text-gray-800';
-    const mobileBorderColor = isHomePage ? 'border-gray-700' : 'border-gray-200';
+function createHeader(activePage = '') {
+    // Apply sticky styles by default - frozen header with larger size
+    const headerClass = 'fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md sticky';
+
+    const logoHeight = 'h-20'; // Use larger logo size by default (was h-12)
+    const textColor = 'text-gray-800';
+    const buttonColor = 'text-gray-800';
+    const mobileMenuBg = 'bg-gray-900/95 backdrop-blur-sm border-t border-gray-700'; // Dark background for mobile menu
+    const mobileLinkColor = 'text-white'; // White text for better visibility
+    const mobileBorderColor = 'border-gray-700'; // Darker border for dark background
 
     function getNavLinkClass(page) {
         const baseClass = `font-semibold hover:text-orange-500 transition-colors nav-link-hover`;
@@ -32,7 +30,7 @@ function createHeader(pageType = 'home', activePage = '') {
     <header id="main-header" class="${headerClass}">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="./index.html" class="flex-shrink-0 logo-shine">
-                <img src="./public/assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="${logoHeight} transition-all duration-300" id="logo-img">
+                <img src="./assets/images/fin-gate-logo.png" alt="FIN GATE Logo" class="${logoHeight} transition-all duration-300" id="logo-img">
             </a>
             <div class="hidden md:flex flex-grow justify-center space-x-8 items-center">
                 <a href="./index.html#about" class="${getNavLinkClass('about')}">About Us</a>
@@ -74,11 +72,8 @@ function initHeader() {
         
         // Initialize mobile menu functionality
         initMobileMenu();
-        
-        // Initialize sticky header for home page
-        if (pageType === 'home') {
-            initStickyHeader();
-        }
+
+        // Header is now frozen at larger size - no scroll behavior needed
     }
 }
 
@@ -94,18 +89,4 @@ function initMobileMenu() {
     }
 }
 
-// Sticky header functionality for home page
-function initStickyHeader() {
-    const header = document.getElementById('main-header');
-    const logoImg = document.getElementById('logo-img');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            header.classList.add('sticky');
-            if (logoImg) logoImg.classList.add('h-20');
-        } else {
-            header.classList.remove('sticky');
-            if (logoImg) logoImg.classList.remove('h-20');
-        }
-    });
-}
+// Header is now frozen at larger size - no scroll functionality needed
