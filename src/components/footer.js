@@ -99,7 +99,7 @@ function createFooter() {
     </footer>
 
     <!-- Fraud Alert -->
-    <div id="fraud-alert" class="hidden fixed bottom-5 right-5 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg shadow-lg max-w-sm z-50">
+    <div id="fraud-alert" class="hidden fixed bottom-5 right-5 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg shadow-lg max-w-sm z-50 md:max-w-sm sm:max-w-xs sm:bottom-3 sm:right-3 sm:p-3">
         <div class="flex">
             <div class="py-1"><svg class="fill-current h-6 w-6 text-red-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-11a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0V7zm1 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg></div>
             <div>
@@ -399,13 +399,18 @@ function initFooterFunctionality() {
     const contactSection = document.getElementById('contact');
 
     if (fraudAlert && closeFraudAlert && contactSection) {
+        let fraudAlertDismissed = false;
+        let lastScrollY = window.scrollY;
+
         // Observer to detect when contact section is in view
         const contactObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Show fraud alert when contact section is visible
+                if (entry.isIntersecting && !fraudAlertDismissed) {
+                    // Show fraud alert when contact section is visible and not dismissed
                     setTimeout(() => {
-                        fraudAlert.classList.remove('hidden');
+                        if (!fraudAlertDismissed) {
+                            fraudAlert.classList.remove('hidden');
+                        }
                     }, 1000);
                 } else {
                     // Hide fraud alert when contact section is not visible
@@ -413,13 +418,28 @@ function initFooterFunctionality() {
                 }
             });
         }, {
-            threshold: 0.3 // Trigger when 30% of contact section is visible
+            threshold: 0.2 // Trigger when 20% of contact section is visible
+        });
+
+        // Additional scroll listener to hide alert when scrolling up from contact section
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const contactRect = contactSection.getBoundingClientRect();
+            const isContactVisible = contactRect.top < window.innerHeight && contactRect.bottom > 0;
+
+            // Hide alert if scrolling up and contact section is not visible
+            if (currentScrollY < lastScrollY && !isContactVisible) {
+                fraudAlert.classList.add('hidden');
+            }
+
+            lastScrollY = currentScrollY;
         });
 
         contactObserver.observe(contactSection);
 
         closeFraudAlert.addEventListener('click', () => {
             fraudAlert.classList.add('hidden');
+            fraudAlertDismissed = true; // Remember that user dismissed it
         });
     }
 
